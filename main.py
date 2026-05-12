@@ -1,17 +1,27 @@
 """ здесь последовательно будет описан код работы со строками начиная с простого примера 
 подсчета в тексте букв слов и предложений """
 text=input('введите текст:')
-words=text.split()# сдесь создали переменную с методом split который делает список слов из строки
-sentences=text.split('.')# сдесь переменная с тем же методом который делает список предложений из строки
-print('  ',words)#показывает питон список слов 
-if len(words)==1:#подставили переменную  words
+words=text.split()# перем подсчета слов
+sentences=text.split('.')# перем подсчета предл
+# первая фу подсчета букв
+def count_letter ():
+    print(f'   текст из :{len(text)} символов')
+# вторая  фу подсчета слов
+def count_words(count):
+    print(f'   текст из :{len(count)} слов') 
+# третья фу подсчета предл
+def count_sentences(count):
+     print(f'   текст из:{len(count)-1} предложений ')
+
+print('  ',words)#показывает питон список
+if len(words)==1:
    print('вы ввели одно слово')
-   print(f'   текст из :{len(text)} буквы')
+   count_letter()
 elif len(sentences) >1:
-   print(f'   текст из:{len(sentences)-1} предложений ')#подставили переменную sentences
-   print(f'   текст из :{len(words)}  слов')#перем words
-   print(f'   текст из :{len(text)} буквы')
+   count_sentences(sentences)
+   count_words(words)
+   count_letter()
 
 else:
-   print(f'   текст из :{len(words)}   слов')#замена на перем words
-   print(f'   текст из :{len(text)} буквы')                                                                                               
+   count_words(words)
+   count_letter()                                                                                                                                                                                    
